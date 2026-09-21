@@ -14,3 +14,4 @@ Console.WriteLine($"RID (від .NET): {report.ReportedRid}");
 Console.WriteLine($"Каталог : {report.BaseDirectory}");
 Console.WriteLine(new string('-', 52));
 Console.WriteLine("Предметна область: Бібліотека (видання, примірник, читач, видача)");
+Console.WriteLine($"Інфо збірки: {report.BuildNote}");

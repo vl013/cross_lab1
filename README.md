@@ -10,7 +10,7 @@ dotnet build
 dotnet run --project src/Cli
 
 ## Публікація
- Режим                        Розмір publish     Потрібен runtime 
-
- win-x64 self-contained       ~76 МБ             No 
-|win-x64 framework-dependent  ~198 КВ            Yes .NET 10
+| Режим | Розмір publish | Потрібен runtime |
+|---|---|---|
+| win-x64 self-contained | ~76 МБ | ні |
+| win-x64 framework-dependent | ~198 KB | так (.NET 10) |
