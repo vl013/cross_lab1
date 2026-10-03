@@ -12,7 +12,7 @@ public sealed record EnvironmentReport(
 
 public static class EnvironmentInfo
 {
-#if NET10_0_OR_GREATER
+#if NET10_0_OR_GREATER // Директива рядка константи
     const string BuildNote = "збірка під net10.0";
 #else
     const string BuildNote = "збірка під net8.0";

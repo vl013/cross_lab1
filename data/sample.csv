@@ -1,0 +1,15 @@
+id;genre;title;year;developer
+G-001;Sandbox;Minecraft;2009;Markus Persson
+G-002;Hero Shooter;Marvel Rivals;2024;NetEase Games
+G-003;Shooter;CS:GO;2012;Valve Corporation
+G-004;MOBA;League of Legends;2009;Riot Games
+G-005;Action RPG;The Witcher 3: Wild Hunt;2015;CD Projekt Red
+G-006;Action-Adventure;Grand Theft Auto V;2013;Rockstar Games
+G-007;RPG;Baldur's Gate 3;2023;Larian Studios
+G-008;Shooter;DOOM;2016;id Software
+G-009;Strategy;StarCraft II;2010;Blizzard Entertainment
+G-010;Platformer;Hollow Knight;2017;Team Cherry
+G-011;Survival;Subnautica;2018;Unknown Worlds
+G-012;;Порожній жанр;2020;
+G-013;RPG;Гра з майбутнього;2077;Хтось
+G-014;Shooter;Немає року

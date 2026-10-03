@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "G-100",
+    "Genre": "RPG",
+    "Title": "Cyberpunk 2077",
+    "Year": 2020,
+    "Developer": "CD Projekt Red"
+  },
+  {
+    "Id": "G-101",
+    "Genre": "Roguelike",
+    "Title": "Hades",
+    "Year": 2020,
+    "Developer": "Supergiant Games"
+  }
+]
