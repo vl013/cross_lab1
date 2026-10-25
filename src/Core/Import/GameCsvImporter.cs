@@ -45,17 +45,17 @@ public static class GameCsvImporter
 
         return parts switch
         {
-            // Патерн властивостей: перевірка кількості колонок[cite: 7]
+            // Патерн властивостей: перевірка кількості колонок. Відкидає рядки де бракує колонок
             { Length: < 4 } => new ParseFailed($"очікую мінімум 4 колонки, отримав {parts.Length}"),
             
-            // Патерни списків + константні патерни: перевірка на порожні поля[cite: 7, 10]
+            // Патерни списків + константні патерни: перевірка на порожні поля. Перевіряє щоб жанр або назва не були порожніми
             [_, "", _, ..] or [_, _, "", ..] => new ParseFailed("Жанр або назва порожні"),
             
-            // Охоронна умова when: перевірка року (має бути числом і в межах епохи відеоігор)[cite: 7, 10]
+            // Охоронна умова when: перевірка року (має бути числом і в межах епохи відеоігор). Перевіряє щоб рік був саме числом і не менше ніж 1950
             [_, _, _, var year, ..] when !int.TryParse(year, NumberStyles.Integer, CultureInfo.InvariantCulture, out int y) || y < 1950 || y > DateTime.Now.Year 
                 => new ParseFailed($"рік '{year}' поза допустимими межами або не є числом"),
             
-            // Якщо все ідеально (без розробника)[cite: 7, 10]
+            // Якщо все ідеально (без розробника)
             [var id, var genre, var title, var year] 
                 => new ParseOk(new GameDto(id, genre, title, int.Parse(year))),
                 
@@ -63,12 +63,12 @@ public static class GameCsvImporter
             [var id, var genre, var title, var year, var developer] 
                 => new ParseOk(new GameDto(id, genre, title, int.Parse(year), developer)),
                 
-            // Гілка за замовчуванням (забагато колонок)[cite: 7, 10]
+            // Гілка за замовчуванням (забагато колонок)
             _ => new ParseFailed($"занадто багато колонок: {parts.Length}")
         };
     }
 
-    // Внутрішня ієрархія результатів розбору[cite: 7, 11]
+    // Внутрішня ієрархія результатів розбору
     private abstract record ParseOutcome;
     private sealed record ParseOk(GameDto Value) : ParseOutcome;
     private sealed record ParseFailed(string Reason) : ParseOutcome;

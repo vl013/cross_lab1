@@ -12,7 +12,7 @@ public static class GameJsonImporter
             string json = File.ReadAllText(path);
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             
-            // Якщо Deserialize поверне null, беремо порожній список [][cite: 12, 15]
+            // Якщо Deserialize поверне null, беремо порожній список []
             var items = JsonSerializer.Deserialize<List<GameDto>>(json, options) ?? [];
             
             return new ImportResult<GameDto>(items, []); // JSON зазвичай валідується цілком
