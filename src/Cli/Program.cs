@@ -25,7 +25,7 @@ var dtoList = new List<GameDto>
 { 
     new GameDto("G-001", "Sandbox", "Minecraft", 2009, "Mojang"),
     new GameDto("G-002", "Shooter", "Doom", 1993, "id Software"),
-    new GameDto("G-ERR", "", "Bad Game", 2025, null) // Порожній жанр
+    new GameDto("G-ERR", "", "Bad Game", 2020, null) // Порожній жанр
 };
 var importResult = new ImportResult<GameDto>(dtoList, new List<string> { "рядок 5: якась помилка парсингу файлу" });
 
